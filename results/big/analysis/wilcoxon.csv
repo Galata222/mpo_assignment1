@@ -1,0 +1,2 @@
+better,worse,instances,rpd_mean_better,rpd_mean_worse,p_value,significant
+SA,IGA-String,135,0.3885986337618086,0.9070317307018378,3.3475800463059044e-16,True

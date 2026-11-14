@@ -1,0 +1,26 @@
+# Parameter setting for SA on the paper's tuning instances (ids 0-9 of each size).
+# 9 variants x 3 sizes x 5 instances x 3 seeds = 405 runs, about 1.15 h with one worker.
+# Pick the variant with the lowest mean RPD (analysis/summary.csv) and copy its
+# values into small.yaml and big.yaml. Extend the grid or the sizes as time allows.
+output_dir: results/tuning_sa
+workers: 1
+
+instances:
+  dir: data/COSP_Flow_Shop
+  ids: [0, 1, 2, 3, 4]
+  groups:
+    - {n: [5], o: [4], m: [3]}
+    - {n: [10, 20], o: [5], m: [3]}
+
+budget:
+  time_factor: 0.12
+
+seeds: [1, 2, 3]
+
+algorithms:
+  SA:
+    type: sa
+    params: {init: neh, p_insert: 0.6, p_swap: 0.3}
+    grid:
+      p0: [0.01, 0.1, 0.3]
+      t_ratio: [0.1, 0.01, 0.001]

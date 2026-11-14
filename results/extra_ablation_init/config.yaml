@@ -1,0 +1,56 @@
+output_dir: results/extra_ablation_init
+workers: 4
+instances:
+  dir: data/COSP_Flow_Shop
+  ids:
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  groups:
+  - n:
+    - 5
+    o:
+    - 4
+    m:
+    - 3
+  - n:
+    - 10
+    - 20
+    - 50
+    o:
+    - 5
+    m:
+    - 3
+  - n:
+    - 50
+    o:
+    - 10
+    m:
+    - 3
+budget:
+  max_full_evals: 190000
+seeds:
+- 1
+- 2
+- 3
+- 4
+- 5
+algorithms:
+  SA-NEH:
+    type: sa
+    params:
+      init: neh
+      p0: 0.3
+      t_ratio: 0.001
+      p_insert: 0.6
+      p_swap: 0.3
+  SA-random:
+    type: sa
+    params:
+      init: random
+      p0: 0.3
+      t_ratio: 0.001
+      p_insert: 0.6
+      p_swap: 0.3

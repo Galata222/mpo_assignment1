@@ -1,0 +1,4 @@
+instance,best_known,new_best,found_by
+instance-5-4-2-13,3286.0,3277,SA
+instance-5-4-6-11,4538.0,4513,IGA-String +35%; SA
+instance-5-4-6-12,4780.0,4768,SA

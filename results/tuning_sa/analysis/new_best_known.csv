@@ -1,0 +1,9 @@
+instance,best_known,new_best,found_by
+instance-10-5-3-1,14601.0,14542,"SA[p0=0.01, t_ratio=0.001]"
+instance-10-5-3-2,14719.0,14688,"SA[p0=0.01, t_ratio=0.01]; SA[p0=0.1, t_ratio=0.01]; SA[p0=0.3, t_ratio=0.001]; SA[p0=0.3, t_ratio=0.01]"
+instance-10-5-3-3,14641.0,14568,"SA[p0=0.3, t_ratio=0.001]"
+instance-10-5-3-4,15809.0,15475,"SA[p0=0.1, t_ratio=0.01]"
+instance-20-5-3-1,53356.0,53176,"SA[p0=0.01, t_ratio=0.001]"
+instance-20-5-3-2,52247.0,52153,"SA[p0=0.01, t_ratio=0.001]"
+instance-20-5-3-3,50563.0,50232,"SA[p0=0.01, t_ratio=0.001]"
+instance-20-5-3-4,50507.0,50272,"SA[p0=0.01, t_ratio=0.01]"

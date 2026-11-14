@@ -1,0 +1,29 @@
+# Big testbed: 27 sizes x 5 instances x 5 runs.
+# 1350 runs for two algorithms, about 2.4 h with 4 workers.
+# Deviations from the paper (Sec. 5.1):
+# - 5 of the 20 comparison instances per size (ids 10-14) to fit the compute budget;
+# - every run gets a fixed number of schedule evaluations instead of a time limit
+#   (see README, "Budget").
+output_dir: results/big
+workers: 4                 # does not affect the results under an evaluation budget
+
+instances:
+  dir: data/COSP_Flow_Shop
+  ids: [10, 11, 12, 13, 14]
+  groups:
+    - {n: [10, 20, 50], o: [2, 5, 10], m: [2, 3, 6]}
+
+budget:
+  max_full_evals: 190000   # evaluations of one complete schedule, same for both algorithms
+  # time_factor: 0.12      # the paper's rule: time limit [s] = n * o * m / 2 * time_factor
+
+seeds: [1, 2, 3, 4, 5]
+
+algorithms:
+  SA:
+    type: sa
+    # p0 and t_ratio chosen in the parameter setting (configs/tuning_sa.yaml)
+    params: {init: neh, p0: 0.3, t_ratio: 0.001, p_insert: 0.6, p_swap: 0.3}
+  IGA-String:
+    type: iga_string
+    params: {gamma: 20000, z: 2.0}   # paper, Table 8

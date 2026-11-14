@@ -1,0 +1,40 @@
+# Budget study on the largest instances (50 orders x 10 jobs = 500 jobs), where IGA-String
+# beat SA in the Big testbed. Question: does the ranking change when both get 2 or 4 times
+# the evaluations? SA's cooling schedule stretches with the budget.
+# 15 instances, 2 seeds, 3 budgets, 2 algorithms: 180 runs, about 2.5 h with 4 workers.
+output_dir: results/budget_500jobs
+workers: 4
+
+instances:
+  dir: data/COSP_Flow_Shop
+  ids: [10, 11, 12, 13, 14]
+  groups:
+    - {n: [50], o: [10], m: [2, 3, 6]}
+
+seeds: [1, 2]
+
+algorithms:
+  SA 190k:
+    type: sa
+    params: {init: neh, p0: 0.3, t_ratio: 0.001, p_insert: 0.6, p_swap: 0.3}
+    budget: {max_full_evals: 190000}
+  SA 380k:
+    type: sa
+    params: {init: neh, p0: 0.3, t_ratio: 0.001, p_insert: 0.6, p_swap: 0.3}
+    budget: {max_full_evals: 380000}
+  SA 760k:
+    type: sa
+    params: {init: neh, p0: 0.3, t_ratio: 0.001, p_insert: 0.6, p_swap: 0.3}
+    budget: {max_full_evals: 760000}
+  IGA-String 190k:
+    type: iga_string
+    params: {gamma: 20000, z: 2.0}
+    budget: {max_full_evals: 190000}
+  IGA-String 380k:
+    type: iga_string
+    params: {gamma: 20000, z: 2.0}
+    budget: {max_full_evals: 380000}
+  IGA-String 760k:
+    type: iga_string
+    params: {gamma: 20000, z: 2.0}
+    budget: {max_full_evals: 760000}

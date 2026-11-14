@@ -1,0 +1,11 @@
+instance,best_known,new_best,found_by
+instance-10-5-3-10,12843.0,12802,SA-random
+instance-10-5-3-11,14603.0,14504,SA-NEH
+instance-10-5-3-12,14125.0,13928,SA-random
+instance-10-5-3-13,15218.0,15155,SA-NEH; SA-random
+instance-10-5-3-14,14547.0,14396,SA-random
+instance-20-5-3-10,53990.0,53898,SA-random
+instance-20-5-3-11,51826.0,51516,SA-random
+instance-20-5-3-12,56415.0,56262,SA-NEH
+instance-20-5-3-13,50799.0,50295,SA-random
+instance-20-5-3-14,53958.0,53713,SA-random

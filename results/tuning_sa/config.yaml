@@ -1,0 +1,46 @@
+output_dir: results/tuning_sa
+workers: 4
+instances:
+  dir: data/COSP_Flow_Shop
+  ids:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  groups:
+  - n:
+    - 5
+    o:
+    - 4
+    m:
+    - 3
+  - n:
+    - 10
+    - 20
+    o:
+    - 5
+    m:
+    - 3
+budget:
+  time_factor: 0.12
+seeds:
+- 1
+- 2
+- 3
+algorithms:
+  SA:
+    type: sa
+    params:
+      init: neh
+      p_insert: 0.6
+      p_swap: 0.3
+    grid:
+      p0:
+      - 0.01
+      - 0.1
+      - 0.3
+      t_ratio:
+      - 0.1
+      - 0.01
+      - 0.001

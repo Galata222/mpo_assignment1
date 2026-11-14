@@ -1,0 +1,25 @@
+# Does SA lose on 500-job instances only because 190 000 evaluations are too few?
+# Same 15 instances as in the Big testbed (n=50, o=10, m in 2,3,6, ids 10-14),
+# but each run gets four times the budget of the main experiments.
+# About 150 runs, roughly 3.5 h with 4 workers.
+output_dir: results/extra_long_budget
+workers: 4
+
+instances:
+  dir: data/COSP_Flow_Shop
+  ids: [10, 11, 12, 13, 14]
+  groups:
+    - {n: [50], o: [10], m: [2, 3, 6]}
+
+budget:
+  max_full_evals: 760000   # 4 x the main-experiment budget
+
+seeds: [1, 2, 3, 4, 5]
+
+algorithms:
+  SA:
+    type: sa
+    params: {init: neh, p0: 0.3, t_ratio: 0.001, p_insert: 0.6, p_swap: 0.3}
+  IGA-String:
+    type: iga_string
+    params: {gamma: 20000, z: 2.0}

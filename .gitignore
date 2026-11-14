@@ -1,0 +1,5 @@
+__pycache__/
+.pytest_cache/
+.venv/
+# the authors' data set is downloaded with scripts/fetch_instances.py
+data/

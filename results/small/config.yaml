@@ -1,0 +1,60 @@
+output_dir: results/small
+workers: 4
+instances:
+  dir: data/COSP_Flow_Shop
+  ids:
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  groups:
+  - n:
+    - 3
+    - 4
+    - 5
+    o:
+    - 2
+    - 3
+    - 4
+    m:
+    - 2
+    - 3
+    - 6
+budget:
+  max_full_evals: 190000
+seeds:
+- 1
+- 2
+- 3
+- 4
+- 5
+algorithms:
+  SA:
+    type: sa
+    params:
+      init: neh
+      p0: 0.3
+      t_ratio: 0.001
+      p_insert: 0.6
+      p_swap: 0.3
+  IGA-String:
+    type: iga_string
+    params:
+      gamma: 20000
+      z: 2.0
